@@ -4,8 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Document</title>
     <style type = text/css>
+        body{
+            background-color: white;
+        }
+        .bgimg{
+            background-image: url("./assets/pomo.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 370px;
+            position:relative;
+           
+        }
+        .slider{
+            position: fixed;
+            top: 170px;
+            left: 470px;
+        }
+        .time-display{
+            position: fixed;
+            top: 250px;
+            left: 520px;
+            color: white;
+        }
+        .control{
+            position: fixed;
+            top: 290px;
+            left: 470px;
+        }
+        .bg{
+            height: 700px;
+            min-height: 100%;  
+           
+            
+        }
         .timerBorder{
             border: 1px solid black;
             
@@ -14,37 +52,44 @@
         .time{
             font-size: 60px;
         }
+        div{
+            /* border: 1px solid black; */
+        }
     </style>
 </head>
 <body>
-    <div class="row">
-        <div class="col">
-            <h1>Pomodoro</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="row justify-content-center">
-                <div class="col-5"> 
-                   
-                        <div class="mt-4"><button>Working</button><button>Resting</button></div>
-                        <div>
-                            <span class="timemin mt-4">25 </span> <span>: </span><span class="timesec">00</span>
-                        </div>
-                       
-                        
-                        <div class="mt-4">
-                            <button class="play">Play</button>
-                            <button class="stop">Stop</button>
-                            <button class="pause">Pause</button>                                
-                        </div>
-                       
-                  
-                </div>
-                <div id="time"></div>
+    
+    <div class="container min-vh-100" id="container">
+
+        <div class="row min-vh-100">
+            <div class="col">
+                <h1></h1>
             </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col mt-2">
+                <div class="row justify-content-center mt-2">
+                    <div class="col-5 bgimg"> 
+                    
+                            <div class="mt-4 slider"><button>Working</button><button>Resting</button></div>
+                                <div class="time-display">
+                                    <span class="timemin mt-4">25 </span> <span>: </span><span class="timesec">00</span>
+                                </div>
+                        
+                            
+                            <div class="mt-4 control">
+                                <button class="play">Play</button>
+                                <button class="stop">Stop</button>
+                                <button class="pause">Pause</button>                                
+                            </div>
+                        
+                    
+                    </div>
+                    <div id="time"></div>
+                </div>
 
 
+            </div>
         </div>
     </div>
     <script src="./script.js"></script>
