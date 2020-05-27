@@ -13,38 +13,17 @@
     <style type = text/css>
         body{
             background-color: white;
+            color: white;
         }
+        /* div{
+            border: 1px solid black;
+        } */
         .bgimg{
             background-image: url("./assets/pomo.png");
             background-size: cover;
             background-repeat: no-repeat;
             height: 370px;
-            position:relative;
-           
-        }
-        .slider-position{
-            position: fixed;
-            top: 170px;
-            left: 530px;
-            border-radius: 20px;
-        }
-        .status{
-            position: fixed;
-            top: 190px;
-            left: 500px;
-            color: white;
-        }
-        
-        .time-display{
-            position: fixed;
-            top: 250px;
-            left: 520px;
-            color: white;
-        }
-        .control{
-            position: fixed;
-            top: 290px;
-            left: 470px;
+            position:relative; 
         }
         .bg{
             height: 700px;
@@ -60,68 +39,73 @@
             font-size: 60px;
         }
         .switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        }
 
-.switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+        .switch input { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+        }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+        .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 30px;
+        }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+        .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 20px;
+        }
 
-input:checked + .slider {
-  background-color: red;
-}
-.btn{
-    background-color: white;
-    border-color: transparent;
-}
+        input:checked + .slider {
+        background-color: #ff6347;
+        }
+        .btn{
+            background-color: white;
+            border-color: transparent;
+        }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px red;
-}
+        input:focus + .slider {
+        box-shadow: 0 0 1px #ff6347;
+        }
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
+        input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+        }
 
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
+        /* Rounded sliders */
+        .slider.round {
+        border-radius: 34px;
+        }
 
-.slider.round:before {
-  border-radius: 50%;
-}
+        .slider.round:before {
+        border-radius: 50%;
+        }
+        .padding-empty{
+            padding-top: 70px;
+        }
         
     </style>
 </head>
@@ -137,25 +121,44 @@ input:checked + .slider:before {
         <div class="row mt-4">
             <div class="col mt-2">
                 <div class="row justify-content-center mt-2">
+
                     <div class="col-5 bgimg"> 
-                            <label class="switch" for="status-toggle">
-                                <input class="slider-position" checked type="checkbox" name="status-toggle" id="status-toggle"/>
-                                <span class="slider"></span>
-                            </label>
-                            <div class="status">Status: <span id="status">Working</span></div>
-                            <!-- <div class="mt-4 slider"><button>Working</button><button>Resting</button></div> -->
-                                <div class="time-display">
-                                    <span class="timemin mt-4">25 </span> <span>: </span><span class="timesec">00</span>
-                                </div>
-                        
-                            
-                            <div class="mt-4 control">
-                                <button class="play btn"><i class="fas fa-play-circle"></i></button>
-                                <button class="stop btn"><i class="fas fa-stop-circle"></i></button>
-                                <button class="pause btn"><i class="fas fa-pause-circle"></i></button>                                
+                        <div class="row mt-4">
+                            <div class="class padding-empty mt-4">
+
                             </div>
-                        
-                    
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="class">
+                                <div class="row  justify-content-center mt-2">
+                                    <label class="switch" for="status-toggle">
+                                        <input class="slider-position" checked type="checkbox" name="status-toggle" id="status-toggle"/>
+                                        <span class="slider"></span>
+                                    </label>
+
+                                </div>
+                                <div class="row justify-content-center mt-2">
+                                    <div class="status">Status: <span id="status">Working</span></div>
+                                </div>
+                                
+                                <!-- <div class="mt-4 slider"><button>Working</button><button>Resting</button></div> -->
+                                <div class="row justify-content-center mt-2">
+                                    <div class="time-display">
+                                        <span class="timemin mt-4">25 </span> <span>: </span><span class="timesec">00</span>
+                                    </div>
+                                </div>    
+                                   
+                            
+                                <div class="row justify-content-center mt-2">
+                                    <div class="mt-4 control">
+                                        <button class="play btn"><i class="fas fa-play-circle"></i></button>
+                                        <button class="stop btn"><i class="fas fa-stop-circle"></i></button>
+                                        <button class="pause btn"><i class="fas fa-pause-circle"></i></button>                                
+                                    </div>
+                                </div>
+                                    
+                            </div>
+                        </div>
                     </div>
                     <div id="time"></div>
                 </div>

@@ -3,6 +3,8 @@ var secEl = document.querySelector('.timesec');
 var minEl = document.querySelector('.timemin');
 var stopEl = document.querySelector('.stop');
 var pauseEl = document.querySelector('.pause');
+var statusSpan = document.querySelector('#status');
+var statusToggle = document.querySelector('#status-toggle');
 
 playEl.addEventListener('click', startTime);
 stopEl.addEventListener('click', stopTime);
