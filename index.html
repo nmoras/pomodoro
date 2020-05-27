@@ -97,11 +97,15 @@
 }
 
 input:checked + .slider {
-  background-color: orange;
+  background-color: red;
+}
+.btn{
+    background-color: white;
+    border-color: transparent;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px orange;
+  box-shadow: 0 0 1px red;
 }
 
 input:checked + .slider:before {
@@ -146,9 +150,9 @@ input:checked + .slider:before {
                         
                             
                             <div class="mt-4 control">
-                                <button class="play">Play</button>
-                                <button class="stop">Stop</button>
-                                <button class="pause">Pause</button>                                
+                                <button class="play btn"><i class="fas fa-play-circle"></i></button>
+                                <button class="stop btn"><i class="fas fa-stop-circle"></i></button>
+                                <button class="pause btn"><i class="fas fa-pause-circle"></i></button>                                
                             </div>
                         
                     
@@ -160,6 +164,6 @@ input:checked + .slider:before {
             </div>
         </div>
     </div>
-    <script src="./script.js"></script>
+    <script src="./index.js"></script>
 </body>
 </html>
