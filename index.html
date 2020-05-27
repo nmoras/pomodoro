@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Document</title>
+    <style type = text/css>
+        .timerBorder{
+            border: 1px solid black;
+            
+            min-height: 280px;
+        }
+        .time{
+            font-size: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col">
+            <h1>Pomodoro</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-center">
+                <div class="col-5"> 
+                   
+                        <div class="mt-4"><button>Working</button><button>Resting</button></div>
+                        <div>
+                            <span class="timemin mt-4">25 </span> <span>: </span><span class="timesec">00</span>
+                        </div>
+                       
+                        
+                        <div class="mt-4">
+                            <button class="play">Play</button>
+                            <button class="stop">Stop</button>
+                            <button class="pause">Pause</button>                                
+                        </div>
+                       
+                  
+                </div>
+                <div id="time"></div>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
