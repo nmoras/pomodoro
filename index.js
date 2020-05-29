@@ -30,8 +30,8 @@ function toggleStatus(event){
     } else{
         status = "Resting";
         statusSpan.textContent = status;
-        minEl.innerHTML = 5;
-        minCounter = 4;
+        minEl.innerHTML = '0' + 5;
+        minCounter =  '0' + 4;
         
     }
 }
@@ -42,7 +42,7 @@ function setTimer(){
             minEl.innerHTML = 24; 
             
         } else{
-            minEl.innerHTML = 4; 
+            minEl.innerHTML = '0' + 4; 
            
         }
         startTime();
@@ -66,7 +66,12 @@ function startTime(){
 
 function countDown(){
     counter--;
-    secEl.innerHTML = counter;
+    if( counter < 10){
+        secEl.innerHTML = '0' + counter;
+    } else {
+        secEl.innerHTML = counter;
+    }
+    
     // console.log(secEl.innerHTML);
     
     if( counter == 0){ 
@@ -78,8 +83,11 @@ function countDown(){
 
 function minCountDown(){
     minCounter --;
-    minEl.innerHTML = minCounter;
-    console.log(minEl.innerHTML);
+    if( minCounter < 10 ){
+        minEl.innerHTML = '0' + minCounter;
+    } else {
+        minEl.innerHTML = minCounter;
+    }
     
     if( minCounter == -1 ){
         console.log('i am checked');
@@ -94,10 +102,10 @@ function stopTime(){
     clearInterval(secCountDown);
     if( status == "Working"){
         minEl.innerHTML = 25;
-        secEl.textContent = 00;
+        secEl.textContent = '0' + 0;
     } else {
-            minEl.innerHTML = 05;
-            secEl.textContent = 00;
+            minEl.innerHTML = '0' + 5;
+            secEl.textContent = '0' + 0;
     }   
 } 
    
