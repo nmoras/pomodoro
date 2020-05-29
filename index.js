@@ -11,29 +11,34 @@ stopEl.addEventListener('click', stopTime);
 pauseEl.addEventListener('click', pauseTime);
 statusToggle.addEventListener("change", toggleStatus);
 let counter = 00;
-let minCounter = 25;
+let minCounter;
 var secCountDown;
 var isPaused = false;
-var sec; var mins;
+var sec; var mins; var status;
 
 
 function toggleStatus(event){
     var checked = event.target.checked;
+
     // console.log(checked);
     if ( checked ){
         status = "Working";
+        statusSpan.textContent = status;
+        minEl.innerHTML = 25;
+        minCounter = 25;
     } else{
         status = "Resting";
+        statusSpan.textContent = status;
+        minEl.innerHTML = 5;
+        minCounter = 5;
     }
-    statusSpan.textContent = status;
-    
 }
 function startTime(){
     if( !isPaused ){
         counter = 60;
         secEl.innerHTML = counter;
         console.log('i am clicked', counter)
-        secCountDown = setInterval( countDown, 1000); 
+        secCountDown = setInterval( countDown, 1000);    
     } else {
         afterPause();
         isPaused = false;
