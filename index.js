@@ -5,11 +5,17 @@ var stopEl = document.querySelector('.stop');
 var pauseEl = document.querySelector('.pause');
 var statusSpan = document.querySelector('#status');
 var statusToggle = document.querySelector('#status-toggle');
+// var audio = document.querySelector('#myAudio')
+
+var audio = new Audio('./assets/Twin-bell-alarm-clock-sound.mp3');
 
 playEl.addEventListener('click', setTimer);
 stopEl.addEventListener('click', stopTime);
 pauseEl.addEventListener('click', pauseTime);
 statusToggle.addEventListener("change", toggleStatus);
+
+
+
 let counter = 00;
 let minCounter;
 var secCountDown;
@@ -91,7 +97,8 @@ function minCountDown(){
     
     if( minCounter == -1 ){
         console.log('i am checked');
-        stopTime();
+        alarmBell();
+        
     } else
         {
             startTime();
@@ -124,4 +131,10 @@ function afterPause(){
     minCounter = mins;
     secCountDown = setInterval( countDown, 1000);
     isPaused = false;
+}
+
+function alarmBell(){
+    console.log('ringgggggg.....')
+    audio.play();
+    stopTime();
 }

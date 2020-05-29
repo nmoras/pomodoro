@@ -20,13 +20,14 @@
         } */
         .bgimg{
             background-image: url("./assets/pomo.png");
+            /* background-attachment: fixed; */
             background-size: cover;
             background-repeat: no-repeat;
-            height: 370px;
+            height: 430px;
             position:relative; 
         }
         .bg{
-            height: 700px;
+            height: 500px;
             min-height: 100%;    
             
         }
@@ -110,6 +111,10 @@
     </style>
 </head>
 <body>
+    <audio id="myAudio">
+        <source src="./assets/Twin-bell-alarm-clock-sound.mp3" type="audio">
+        Your browser does not support the audio element.
+    </audio>
     
     <div class="container min-vh-100" id="container">
 
@@ -122,7 +127,7 @@
             <div class="col mt-2">
                 <div class="row justify-content-center mt-2">
 
-                    <div class="col-5 bgimg"> 
+                    <div class="col-6 bgimg"> 
                         <div class="row mt-4">
                             <div class="class padding-empty mt-4">
 
@@ -130,19 +135,19 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="class">
-                                <div class="row  justify-content-center mt-2">
+                                <div class="row  justify-content-center mt-4">
                                     <label class="switch" for="status-toggle">
                                         <input class="slider-position" checked type="checkbox" name="status-toggle" id="status-toggle"/>
                                         <span class="slider"></span>
                                     </label>
 
                                 </div>
-                                <div class="row justify-content-center mt-2">
+                                <div class="row justify-content-center mt-4">
                                     <div class="status">Status: <span id="status">Working</span></div>
                                 </div>
                                 
                                 <!-- <div class="mt-4 slider"><button>Working</button><button>Resting</button></div> -->
-                                <div class="row justify-content-center mt-2">
+                                <div class="row justify-content-center mt-4">
                                     <div class="time-display">
                                         <span class="timemin mt-4">25 </span> <span>: </span><span class="timesec">00</span>
                                     </div>
@@ -156,14 +161,16 @@
                                         <button class="pause btn"><i class="fas fa-pause-circle"></i></button>                                
                                     </div>
                                 </div>
+                                
                                     
                             </div>
+                           
                         </div>
                     </div>
                     <div id="time"></div>
                 </div>
 
-
+               
             </div>
         </div>
     </div>
