@@ -6,7 +6,7 @@ var pauseEl = document.querySelector('.pause');
 var statusSpan = document.querySelector('#status');
 var statusToggle = document.querySelector('#status-toggle');
 
-playEl.addEventListener('click', startTime);
+playEl.addEventListener('click', setTimer);
 stopEl.addEventListener('click', stopTime);
 pauseEl.addEventListener('click', pauseTime);
 statusToggle.addEventListener("change", toggleStatus);
@@ -18,6 +18,7 @@ var sec; var mins; var status;
 
 
 function toggleStatus(event){
+    stopTime();
     var checked = event.target.checked;
 
     // console.log(checked);
@@ -25,14 +26,32 @@ function toggleStatus(event){
         status = "Working";
         statusSpan.textContent = status;
         minEl.innerHTML = 25;
-        minCounter = 25;
+        minCounter = 24;
     } else{
         status = "Resting";
         statusSpan.textContent = status;
         minEl.innerHTML = 5;
-        minCounter = 5;
+        minCounter = 4;
+        
     }
 }
+
+function setTimer(){
+    if( !isPaused ){
+        if( status == "Working"){
+            minEl.innerHTML = 24; 
+            
+        } else{
+            minEl.innerHTML = 4; 
+           
+        }
+        startTime();
+    } else{
+        startTime();
+    }
+   
+}
+
 function startTime(){
     if( !isPaused ){
         counter = 60;
@@ -48,7 +67,7 @@ function startTime(){
 function countDown(){
     counter--;
     secEl.innerHTML = counter;
-    console.log(secEl.innerHTML);
+    // console.log(secEl.innerHTML);
     
     if( counter == 0){ 
         clearInterval(secCountDown);
@@ -60,10 +79,11 @@ function countDown(){
 function minCountDown(){
     minCounter --;
     minEl.innerHTML = minCounter;
+    console.log(minEl.innerHTML);
     
-    if( minCounter == 0 ){
+    if( minCounter == -1 ){
         console.log('i am checked');
-        
+        stopTime();
     } else
         {
             startTime();
@@ -72,9 +92,15 @@ function minCountDown(){
 
 function stopTime(){
     clearInterval(secCountDown);
-    minEl.innerHTML = 25;
-    secEl.textContent = 00;
-}    
+    if( status == "Working"){
+        minEl.innerHTML = 25;
+        secEl.textContent = 00;
+    } else {
+            minEl.innerHTML = 05;
+            secEl.textContent = 00;
+    }   
+} 
+   
 
 function pauseTime(){
     sec = secEl.textContent;
