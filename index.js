@@ -9,6 +9,7 @@ var statusToggle = document.querySelector('#status-toggle');
 playEl.addEventListener('click', startTime);
 stopEl.addEventListener('click', stopTime);
 pauseEl.addEventListener('click', pauseTime);
+statusToggle.addEventListener("change", toggleStatus);
 let counter = 00;
 let minCounter = 25;
 var secCountDown;
@@ -16,6 +17,17 @@ var isPaused = false;
 var sec; var mins;
 
 
+function toggleStatus(event){
+    var checked = event.target.checked;
+    // console.log(checked);
+    if ( checked ){
+        status = "Working";
+    } else{
+        status = "Resting";
+    }
+    statusSpan.textContent = status;
+    
+}
 function startTime(){
     if( !isPaused ){
         counter = 60;
@@ -27,7 +39,6 @@ function startTime(){
         isPaused = false;
     }
 }    
-
 
 function countDown(){
     counter--;
