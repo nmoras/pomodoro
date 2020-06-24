@@ -27,7 +27,7 @@ function toggleStatus(event){
     stopTime();
     var checked = event.target.checked;
 
-    // console.log(checked);
+    console.log(checked);
     if ( checked ){
         status = "Working";
         statusSpan.textContent = status;
@@ -89,13 +89,14 @@ function countDown(){
 
 function minCountDown(){
     minCounter --;
-    if( minCounter < 10 ){
+    if( minCounter < 10 & minCounter > -1 ){
         minEl.innerHTML = '0' + minCounter;
     } else {
         minEl.innerHTML = minCounter;
     }
     
     if( minCounter == -1 ){
+        minEl.innerHTML = 00;
         console.log('i am checked');
         alarmBell();
         
@@ -134,7 +135,7 @@ function afterPause(){
 }
 
 function alarmBell(){
-    console.log('ringgggggg.....')
     audio.play();
     stopTime();
+    // setTimeout(stopTime, 2000);
 }
